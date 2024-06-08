@@ -6,4 +6,4 @@ source .dev/bin/activate
 
 # install deps
 pip3 install -U pip
-pip3 install -e .[dev]
+pip3 install -e .
