@@ -1,6 +1,10 @@
 from openai import OpenAI
 from dotenv import dotenv_values
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 class Client:
 
@@ -10,6 +14,8 @@ class Client:
 
     def generate(self, prompt: str, model: str = "gpt-3.5-turbo"):
 
+        logger.info(("Making api request to openai. ", f"Model: {model}"))
+
         if self.backend == "openai":
             try:
                 client = OpenAI(
@@ -17,7 +23,7 @@ class Client:
                     api_key=self.config.get("OPENAI_API_KEY"),
                 )
 
-                chat_completion = client.chat.completions.create(
+                response = client.chat.completions.create(
                     messages=[
                         {
                             "role": "user",
@@ -26,10 +32,12 @@ class Client:
                     ],
                     model=model,
                 )
+                logger.info("Api response recieved")
                 return {
-                    "id": chat_completion.id,
-                    "content": chat_completion.choices[0].message.content,
-                    "usage": chat_completion.usage.dict(),
+                    "id": response.id,
+                    "content": response.choices[0].message.content,
+                    "usage": response.usage.dict(),
                 }
+
             except Exception as err:
                 raise err
