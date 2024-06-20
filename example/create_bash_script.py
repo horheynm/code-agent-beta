@@ -1,6 +1,9 @@
-from api.generate import Client
+# Use to create a single bash script executable
+# Used for creating a new project
+
+from local.generate import Client
 import subprocess
-from api.transform import apply
+from local.transform import apply
 
 import logging
 
