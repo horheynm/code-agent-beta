@@ -28,6 +28,7 @@ class ChatAgent:
         )
 
     def create_plan(self, prompt: str, path: str):
+        print("Planning...")
         messages = [
             {
                 "role": "system",
@@ -49,6 +50,7 @@ class ChatAgent:
         prompt: str,
         path: str,
     ):
+        print("Execting plan...")
         with open(path, "r", encoding="utf-8") as file:
             plan = file.read()
 
@@ -80,6 +82,7 @@ class ChatAgent:
     ):
 
         for file in files:
+            print(f"Generating code for {file}")
             current_file = os.path.abspath(
                 os.path.join(
                     path,
@@ -121,6 +124,13 @@ class ChatAgent:
         stream: bool = False,
         **kwargs,
     ):
+        print(
+            "LLM inference with ",
+            f"model: {self.model}",
+            f"temperature: {temperature}",
+            f"message keys: {list(messages[0].keys())}",
+            f"params: {list(kwargs.keys())}",
+        )
         response = self.client.chat.completions.create(
             model=self.model,
             temperature=temperature,

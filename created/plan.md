@@ -1,26 +1,29 @@
-## Plan for Next.js Tic Tac Toe App using Typescript
+## Plan for Next.js Tic Tac Toe App using TypeScript
 
-### Components:
-1. Game board component: Responsible for rendering the tic tac toe grid and handling game logic.
-2. Square component: Represents each square in the tic tac toe grid.
-3. Status component: Displays the status of the game (e.g., winner, current player).
-4. Button component: Restart the game.
+### 1. Components to be created:
+   - Board component: Responsible for rendering the game board and handling user interactions.
+   - Square component: Represents a single square in the game board.
+   - Game component: Manages the game state, including checking for a winner and handling the game flow.
+   - App component: Main component to render the game and initialize the game state.
 
-### File Structure:
-- components/
-  - GameBoard.tsx
-  - Square.tsx
-  - Status.tsx
-  - Button.tsx
-- pages/
-  - index.tsx
+### 2. File Structure:
+   - components/
+     - Board.tsx
+     - Square.tsx
+     - Game.tsx
+   - pages/
+     - index.tsx
+   - tsconfig.json
 
-### Third Party Packages:
-1. Next.js: A React framework for building server-side rendered applications.
-   - Installation: `npx create-next-app@latest`
-2. TypeScript: Adds static typing to JavaScript to improve code quality and developer productivity.
-   - Installation: `npm install --save-dev typescript @types/react @types/node`
-3. Material-UI: UI components library for React.
-   - Installation: `npm install @mui/material @emotion/react @emotion/styled`
+### 3. Third Party Packages:
+   - Next.js: To build the React application.
+     - Installation: `npx create-next-app@latest`
+   - TypeScript: To add static typing to the project.
+     - Installation: `npm install --save-dev typescript @types/react @types/node`
+   - React: For building the user interface.
+   - React-DOM: For rendering React components in the DOM.
+   - @types/react: TypeScript type definitions for React.
+   - @types/node: TypeScript type definitions for Node.js.
+   - Other necessary packages for styling and game logic as needed.
 
-By following this plan, we can create a Next.js Tic Tac Toe app using TypeScript with a clear separation of components and a modern UI using Material-UI for a better user experience.
+This plan outlines the components to be created, the file structure for organizing the components, and the third-party packages required for building a Next.js Tic Tac Toe app using TypeScript.

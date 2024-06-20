@@ -1,2 +1,5 @@
-# component-generator
-React component generator
+# Component generator
+
+Simple component generator. 
+
+![Demo](./static/demo.gif)
