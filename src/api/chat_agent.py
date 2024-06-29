@@ -34,7 +34,10 @@ class ChatAgent:
                 "role": "system",
                 "content": SYSTEM_CONTENT,
             },
-            {"role": "user", "content": CONTENT_PROMPT.format(prompt)},
+            {
+                "role": "user",
+                "content": CONTENT_PROMPT.format(prompt),
+            },
         ]
 
         if not os.path.exists(path):
@@ -96,12 +99,18 @@ class ChatAgent:
                         SYSTEM_PROMPT, current_file
                     ),
                 },
-                {"role": "user", "content": EXECUTE_PLAN_USER_PROMPT.format(plan)},
+                {
+                    "role": "user",
+                    "content": EXECUTE_PLAN_USER_PROMPT.format(plan),
+                },
                 {
                     "role": "user",
                     "content": CONTENT_PROMPT.format(prompt),
                 },
-                {"role": "user", "content": CODE_GEN_USER_PROMPT.format(current_file)},
+                {
+                    "role": "user",
+                    "content": CODE_GEN_USER_PROMPT.format(current_file),
+                },
             ]
 
             response = self.make_request(messages=messages)
