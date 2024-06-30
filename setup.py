@@ -42,14 +42,14 @@ extra_reqs = {
 
 
 setup(
-    name="Code Agent",
+    name="code_agent",
     version="0.0.1",
     author="horheynm",
     author_email="george.scratch.dev@gmail.com",
     license="Apache 2.0",
-    description="LLM agent for simple react component generation",
+    description="LLM agent for code generation",
     package_dir={"": "src"},
-    packages=find_packages("src", include=["api"]),
+    packages=find_packages("src", include=["code_agent"]),
     install_requires=required_packages,
     extras_require=extra_reqs,
 )
