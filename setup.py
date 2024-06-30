@@ -42,7 +42,7 @@ extra_reqs = {
 
 
 setup(
-    name="Simple component generator",
+    name="Code Agent",
     version="0.0.1",
     author="horheynm",
     author_email="george.scratch.dev@gmail.com",
